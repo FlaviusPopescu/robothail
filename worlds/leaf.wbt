@@ -1,0 +1,158 @@
+#VRML_SIM V6.0 utf8
+WorldInfo {
+  info [
+    "A multi-robot system implementation"
+    "Flavius Popescu"
+    "23 JAN 2013"
+  ]
+}
+Viewpoint {
+  orientation -0.998878 0.0353103 -0.0315527 0.970827
+  position 0.720959 2.25028 2.08705
+  follow "supervisor"
+}
+Background {
+  skyColor [
+    0.4 0.7 1
+  ]
+}
+DEF FLOOR Solid {
+  children [
+    DEF FLOORSHAPE Shape {
+      geometry ElevationGrid {
+        color Color {
+          color [
+            0.792157 0.858824 0.803922
+            0.933333 1 0.913725
+          ]
+        }
+        colorPerVertex FALSE
+        xDimension 11
+        xSpacing 0.1
+        zDimension 11
+        zSpacing 0.1
+      }
+    }
+  ]
+  boundingObject USE FLOORSHAPE
+}
+DirectionalLight {
+  ambientIntensity 0.05
+  direction 0 -5 0
+}
+DEF WALL1 Solid {
+  translation 0 0.05 0.5
+  children [
+    DEF WALL Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0.756863 0.0627451
+          emissiveColor 1 1 1
+          shininess 0.1
+          specularColor 1 1 1
+        }
+      }
+      geometry Box {
+        size 0.01 0.1 1
+      }
+    }
+  ]
+  boundingObject USE WALL
+}
+DEF WALL2 Solid {
+  translation 0.5 0.05 0
+  rotation 0 1 0 1.5708
+  children [
+    USE WALL
+  ]
+  boundingObject USE WALL
+}
+DEF WALL3 Solid {
+  translation 1 0.05 0.5
+  children [
+    USE WALL
+  ]
+  boundingObject USE WALL
+}
+DEF WALL4 Solid {
+  translation 0.5 0.05 1
+  rotation 0 1 0 1.5708
+  children [
+    USE WALL
+  ]
+  boundingObject USE WALL
+}
+DEF auctioneer Robot {
+  children [
+    Receiver {
+    }
+    Emitter {
+    }
+  ]
+  name "auctioneer"
+  controller "auctioneer"
+}
+DEF listener Robot {
+  children [
+    Receiver {
+      channel 1
+    }
+    Emitter {
+      channel 1
+    }
+  ]
+  name "listener"
+  controller "listener"
+}
+DEF plotter Robot {
+  children [
+    Receiver {
+      channel 2
+    }
+    Emitter {
+      channel 2
+    }
+  ]
+}
+DEF R1 EPuck {
+  translation 0.25 0 0.45
+  controller "straton"
+  name "epuck1"
+}
+DEF R2 EPuck {
+  translation 0.838207 0 0.868629
+  controller "straton"
+  name "epuck2"
+}
+DEF R3 EPuck {
+  translation 0.72346 0 0.226149
+  controller "straton"
+  name "epuck3"
+}
+DEF R4 EPuck {
+  translation 0.36167 0 0.876923
+  controller "straton"
+  name "epuck4"
+}
+WoodBox {
+  translation 0.25 0.05 0.1
+  boxSize 0.1 0.1 0.2
+}
+WoodBox {
+  translation 0.25 0.05 0.1
+  boxSize 0.1 0.1 0.2
+}
+WoodBox {
+  translation 0.55 0.05 0.7
+  boxSize 0.1 0.1 0.2
+}
+WoodBox {
+  translation 0.65 0.05 0.55
+  rotation 0 1 0 1.5708
+  boxSize 0.1 0.1 0.3
+}
+WoodBox {
+  translation 0.1 0.05 0.75
+  rotation 0 1 0 1.5708
+  boxSize 0.1 0.1 0.2
+}

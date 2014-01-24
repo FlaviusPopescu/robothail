@@ -1,0 +1,6 @@
+An implementation in Webots of a multi-robot system with several E-Puck robots capable of navigating around the obstacles.
+
+The E-Pucks have an internal grid-based representation of the world map, with the location of the boxes marked. They can sense nearby obstacles using the infrared sensors distributed circularly on their body. By comparing actual sensor readings with expected values based on the internal map representation, the robots can probabilistically determine their location. Then, it is simple to plan their path from the estimated location to a target location using an algorithm like A*. In this example, goals are randomly generated on the map and a central planning agent assigns each goal to the robot that reports the shortest traveling distance in order to reach the required location. Therefore in order to make a decision, the central agent receives a message from every robot in the field, containing the expected distance required to travel. The agent then chooses the smallest of these and advertises the winner. For more details see 
+TODO add link
+
+
