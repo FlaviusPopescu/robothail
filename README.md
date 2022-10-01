@@ -3,7 +3,7 @@ A multi-robot simulation in Webots
 
 This is an implementation of a multi-robot scenario in which multiple mobile robots need to travel as a team, on a map, to assigned locations. The objective is to minimize response time at the team-level, such that whenever a goal location is generated one of the robots will travel to it as soon as possible. This could be seen as a taxi-hailing situation when a customer places an order and a taxi company sends the closest available vehicle.
 
-For an example of the simulation running when several goal locations are generated and a decision is made as to which robot is assigned, see [this video](http://www.youtube.com/watch?v=ukz1vDEfdZ0)
+For an example of the simulation running when several goal locations are generated and a decision is made as to which robot is assigned, see [the video](/videos/team1.avi)
 
 
 Implementation
